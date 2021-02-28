@@ -1,0 +1,25 @@
+{
+  "name": "mini-js-projects",
+  "version": "1.0.0",
+  "description": "Beginner js projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/livmari/mini-js-projects.git"
+  },
+  "author": "Liv Mari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/livmari/mini-js-projects/issues"
+  },
+  "homepage": "https://github.com/livmari/mini-js-projects#readme",
+  "devDependencies": {
+    "prettier": "2.2.1"
+  },
+  "scripts": {
+    "format": "npx prettier --write ."
+  }
+}
