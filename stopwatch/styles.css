@@ -10,7 +10,7 @@ html {
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 20px;
   min-height: 100vh;
   width: 100vw;
   display: flex;
@@ -18,38 +18,43 @@ body {
   justify-content: center;
   font-family: "Roboto Mono", monospace;
   font-size: 1.6rem;
+  text-align: center;
   color: #fcfcfc;
   background: #2d2d2d;
 }
 
 .content-container {
-  width: auto;
-  max-width: 500px;
-  margin: 20px;
   display: flex;
   flex-direction: column;
   gap: 50px;
 }
 
 .time-container {
-  width: 100%;
-  text-align: center;
-  font-size: 6rem;
+  font-size: 2.5rem;
 }
 
+@media only screen and (min-width: 300px) {
+  .time-container {
+    font-size: 4rem;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .time-container {
+    font-size: 6rem;
+  }
+}
 .btn-container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: 1fr;
   gap: 10px;
 }
 
-h1 {
-  margin: 0;
-  padding: 0;
-  text-align: center;
+@media only screen and (min-width: 300px) {
+  .btn-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-
 button {
   padding: 10px;
   font-family: "Roboto Mono", monospace;
@@ -63,17 +68,6 @@ button {
 button:hover {
   color: #2d2d2d;
   background: #fcfcfc;
-}
-
-@media only screen and (min-width: 360px) {
-  .btn-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media only screen and (min-width: 550px) {
-  .time-container {
-    font-size: 6rem;
-  }
 }
 
 /*# sourceMappingURL=styles.css.map */
