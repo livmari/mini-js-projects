@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', event => {
   // Stopwatch time display DOM element
   const timeDisplay = document.getElementById('timeDisplay')
 
-  // How to display time in DOM
   const displayTime = () => {
     // Temporary storage for styling counted time
     let h, m, s, ms
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', event => {
     else h = hours
 
     // Counted time concatenated and displayed in DOM
-    timeDisplay.innerText = `${h}:${m}:${s}:${ms}`
+    return `${h}:${m}:${s}:${ms}`
   }
 
   // Time tracking variables
@@ -38,6 +37,27 @@ document.addEventListener('DOMContentLoaded', event => {
 
   startStopBtn.innerText = 'Start'
   resetLapsBtn.innerText = 'Reset'
+
+  // Laps container
+  let lapsDisplay = document.getElementById('lapsDisplay')
+  let lapNo = 1
+
+  const addLap = () => {
+    let lapNoContainer = document.createElement('div')
+    lapNoContainer.classList.add('lap-no')
+    lapNoContainer.innerText = `Lap ${lapNo}`
+    lapNo++
+
+    let lapTimeContainer = document.createElement('div')
+    lapTimeContainer.classList.add('lap-time')
+    lapTimeContainer.innerText = displayTime()
+
+    let lap = document.createElement('div')
+    lap.appendChild(lapNoContainer)
+    lap.appendChild(lapTimeContainer)
+
+    lapsDisplay.appendChild(lap)
+  }
 
   // Things that happen if the start button is clicked
   startStopBtn.onclick = () => {
@@ -66,7 +86,7 @@ document.addEventListener('DOMContentLoaded', event => {
   // Things that happen if the reset button is clicked
   resetLapsBtn.onclick = () => {
     if (trackingTime) {
-      // todo: track laps
+      addLap()
     } else if (!trackingTime) {
       // Time tracking variables set back to their default values
       hours = 0
@@ -75,7 +95,10 @@ document.addEventListener('DOMContentLoaded', event => {
       deciseconds = 0
 
       // DOM element updated to display reset time
-      displayTime()
+      timeDisplay.innerText = displayTime()
+
+      // Remove recorded laps
+      lapsDisplay.innerHTML = ''
     }
   }
 
@@ -102,6 +125,6 @@ document.addEventListener('DOMContentLoaded', event => {
       minutes = 0
     }
 
-    displayTime()
+    timeDisplay.innerText = displayTime()
   }
 })
