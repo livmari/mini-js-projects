@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', event => {
+document.addEventListener('DOMContentLoaded', () => {
   // Stopwatch time display DOM element
   const timeDisplay = document.getElementById('timeDisplay')
 
