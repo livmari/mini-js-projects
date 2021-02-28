@@ -24,43 +24,59 @@ document.addEventListener('DOMContentLoaded', event => {
     timeDisplay.innerText = `${h}:${m}:${s}:${ms}`
   }
 
-  // Stopwatch button DOM elements
-  const startBtn = document.getElementById('startBtn')
-  const stopBtn = document.getElementById('stopBtn')
-  const resetBtn = document.getElementById('resetBtn')
-
   // Time tracking variables
   let hours = 0,
     minutes = 0,
     seconds = 0,
     deciseconds = 0,
-    interval
+    interval,
+    trackingTime = false
+
+  // Stopwatch button DOM elements
+  const startStopBtn = document.getElementById('startStopBtn')
+  const resetLapsBtn = document.getElementById('resetLapsBtn')
+
+  startStopBtn.innerText = 'Start'
+  resetLapsBtn.innerText = 'Reset'
 
   // Things that happen if the start button is clicked
-  startBtn.onclick = () => {
-    // Timer stops because interval is cleared
-    clearInterval(interval)
+  startStopBtn.onclick = () => {
+    if (trackingTime) {
+      // Timer stops because interval is cleared
+      clearInterval(interval)
 
-    // Interval is started
-    interval = setInterval(trackTime, 10)
-  }
+      startStopBtn.innerText = 'Start'
+      resetLapsBtn.innerText = 'Reset'
 
-  // Things that happen if the stop button is clicked
-  stopBtn.onclick = () => {
-    // Timer stops because interval is cleared
-    clearInterval(interval)
+      trackingTime = false
+    } else if (!trackingTime) {
+      // Timer stops because interval is cleared
+      clearInterval(interval)
+
+      // Interval is started
+      interval = setInterval(trackTime, 10)
+
+      startStopBtn.innerText = 'Stop'
+      resetLapsBtn.innerText = 'Laps'
+
+      trackingTime = true
+    }
   }
 
   // Things that happen if the reset button is clicked
-  resetBtn.onclick = () => {
-    // Time tracking variables set back to their default values
-    hours = 0
-    minutes = 0
-    seconds = 0
-    deciseconds = 0
+  resetLapsBtn.onclick = () => {
+    if (trackingTime) {
+      // todo: track laps
+    } else if (!trackingTime) {
+      // Time tracking variables set back to their default values
+      hours = 0
+      minutes = 0
+      seconds = 0
+      deciseconds = 0
 
-    // DOM element updated to display reset time
-    displayTime()
+      // DOM element updated to display reset time
+      displayTime()
+    }
   }
 
   // Logic to for tracking the time if the stopwatch is on
