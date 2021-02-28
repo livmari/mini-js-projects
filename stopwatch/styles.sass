@@ -1,7 +1,8 @@
 @import 'https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto+Mono:wght@300&display=swap'
 
-$primary-color: #f3a533
-$secondary-color: #fff
+// f3a533
+$primary-color: #2d2d2d
+$secondary-color: #fcfcfc
 
 // Base DOM styling
 *
@@ -26,7 +27,8 @@ body
 
 // Container styling
 .content-container
-  max-width: 450px
+  width: auto
+  max-width: 500px
   margin: 20px
   display: flex
   flex-direction: column
@@ -34,10 +36,8 @@ body
 
 .time-container
   width: 100%
-  display: grid
-  grid-template-columns: 4fr 1fr 4fr 1fr 4fr
   text-align: center
-  font-size: 3rem
+  font-size: 6rem
 
 .btn-container
   width: 100%
@@ -51,9 +51,6 @@ h1
   padding: 0
   text-align: center
 
-.stopwatch-time
-  text-align: center
-
 // Button styling
 button
   padding: 10px
@@ -61,7 +58,7 @@ button
   font-size: 2rem
   color: $secondary-color
   background: transparent
-  border: white 2px solid
+  border: $secondary-color 2px solid
   border-radius: 5px
 
 button:hover
@@ -69,8 +66,9 @@ button:hover
   background: $secondary-color
 
 @media only screen and (min-width: 360px)
-  .time-container
-    font-size: 6rem
-
   .btn-container
     grid-template-columns: repeat(3, 1fr)
+
+@media only screen and (min-width: 550px)
+  .time-container
+    font-size: 6rem

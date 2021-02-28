@@ -18,12 +18,13 @@ body {
   justify-content: center;
   font-family: "Roboto Mono", monospace;
   font-size: 1.6rem;
-  color: #fff;
-  background: #f3a533;
+  color: #fcfcfc;
+  background: #2d2d2d;
 }
 
 .content-container {
-  max-width: 450px;
+  width: auto;
+  max-width: 500px;
   margin: 20px;
   display: flex;
   flex-direction: column;
@@ -32,10 +33,8 @@ body {
 
 .time-container {
   width: 100%;
-  display: grid;
-  grid-template-columns: 4fr 1fr 4fr 1fr 4fr;
   text-align: center;
-  font-size: 3rem;
+  font-size: 6rem;
 }
 
 .btn-container {
@@ -51,32 +50,29 @@ h1 {
   text-align: center;
 }
 
-.stopwatch-time {
-  text-align: center;
-}
-
 button {
   padding: 10px;
   font-family: "Roboto Mono", monospace;
   font-size: 2rem;
-  color: #fff;
+  color: #fcfcfc;
   background: transparent;
-  border: white 2px solid;
+  border: #fcfcfc 2px solid;
   border-radius: 5px;
 }
 
 button:hover {
-  color: #f3a533;
-  background: #fff;
+  color: #2d2d2d;
+  background: #fcfcfc;
 }
 
 @media only screen and (min-width: 360px) {
-  .time-container {
-    font-size: 6rem;
-  }
-
   .btn-container {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (min-width: 550px) {
+  .time-container {
+    font-size: 6rem;
   }
 }
 
