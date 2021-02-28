@@ -2,7 +2,8 @@
 
 // old primary color: #f3a533
 $primary-color: #2d2d2d
-$secondary-color: #fcfcfc
+$secondary-color: #434343
+$accent-color: #fcfcfc
 
 // Base DOM styling
 *
@@ -23,7 +24,7 @@ body
   font-family: 'Roboto Mono', monospace
   font-size: 1.6rem
   text-align: center
-  color: $secondary-color
+  color: $accent-color
   background: $primary-color
 
 .content-container
@@ -58,11 +59,37 @@ button
   padding: 10px
   font-family: 'Roboto Mono', monospace
   font-size: 2rem
-  color: $secondary-color
+  color: $accent-color
   background: transparent
-  border: $secondary-color 2px solid
+  border: $accent-color 2px solid
   border-radius: 5px
 
 button:hover
   color: $primary-color
+  background: $accent-color
+
+// Styling for laps container and children
+div.laps-container
+  height: 300px
+  padding: 0 10px
+  overflow: scroll
   background: $secondary-color
+  border-radius: 5px
+
+  div.lap
+    border-bottom: 1px solid $accent-color
+
+  div.lap:last-child
+    border-bottom: none
+
+div.lap
+  padding: 10px
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+
+  div:first-child
+    text-align: left
+
+  div:last-child
+    text-align: right
+    border-bottom: none

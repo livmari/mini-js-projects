@@ -44,15 +44,14 @@ document.addEventListener('DOMContentLoaded', event => {
 
   const addLap = () => {
     let lapNoContainer = document.createElement('div')
-    lapNoContainer.classList.add('lap-no')
     lapNoContainer.innerText = `Lap ${lapNo}`
     lapNo++
 
     let lapTimeContainer = document.createElement('div')
-    lapTimeContainer.classList.add('lap-time')
     lapTimeContainer.innerText = displayTime()
 
     let lap = document.createElement('div')
+    lap.classList.add('lap')
     lap.appendChild(lapNoContainer)
     lap.appendChild(lapTimeContainer)
 
@@ -99,6 +98,7 @@ document.addEventListener('DOMContentLoaded', event => {
 
       // Remove recorded laps
       lapsDisplay.innerHTML = ''
+      lapNo = 1
     }
   }
 

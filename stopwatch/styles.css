@@ -70,4 +70,31 @@ button:hover {
   background: #fcfcfc;
 }
 
+div.laps-container {
+  height: 300px;
+  padding: 0 10px;
+  overflow: scroll;
+  background: #434343;
+  border-radius: 5px;
+}
+div.laps-container div.lap {
+  border-bottom: 1px solid #fcfcfc;
+}
+div.laps-container div.lap:last-child {
+  border-bottom: none;
+}
+
+div.lap {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+div.lap div:first-child {
+  text-align: left;
+}
+div.lap div:last-child {
+  text-align: right;
+  border-bottom: none;
+}
+
 /*# sourceMappingURL=styles.css.map */
