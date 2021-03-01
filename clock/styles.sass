@@ -1,0 +1,51 @@
+@import 'https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap'
+
+$primary-color: #000
+$secondary-color: #101010
+$accent-color: #bababa
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html
+  font-size: 62.5%
+
+body
+  height: 100vh
+  width: 100vw
+  overflow: hidden
+  display: flex
+  align-items: center
+  justify-content: center
+  font-family: 'Oswald', sans-serif
+  font-size: 1.6rem
+  background: $primary-color
+
+// Styling the clock container
+div.clock
+  display: flex
+  flex-direction: column
+  gap: 30px
+  text-align: center
+  font-size: 50vw
+  color: $accent-color
+
+@media only screen and (min-width: 550px)
+  div.clock
+    flex-direction: row
+    font-size: 30vw
+
+// Styling displayed
+div.time
+  position: relative
+  margin: 0
+  padding: 20px 30px 50px 30px
+  line-height: 100%
+  background: $secondary-color
+  border-radius: 20px
+
+@media only screen and (min-width: 550px)
+  div.time
+    border-radius: 50px
